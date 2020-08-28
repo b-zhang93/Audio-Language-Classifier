@@ -11,8 +11,7 @@ We decided to convert into melspectrogram because it converts the typical audio 
 
 **Files:**
 
-1. `run_setup.sh` - bash script used to mass download files from voxforge of user submitted speech clips in multiple langauges. Change the parameters in the script if you wish to download different languages.
-     default langauges are currently: English, French, Spanish, German
+1. `run_setup.sh` - bash script used to mass download files from voxforge of user submitted speech clips in multiple langauges. Change the parameters in the script if you wish to download different languages. Default langauges are currently:  English, French, Spanish, German
 2. `create_melspectrograms.py` - Python script to convert all the .wav files into melspectrograms and split them into train / test folders with each language as a class folder.
 3. `mel_transform.ipynb` - Juypter notebook used for prototyping the create_melspectrogram.py file. Will probably remove after final version since it's redundant.
 4. `CNN.ipynb` - prototyping first two simple CNN models with the melspectrograms. Will be updating later to use OOP and class / methods for the models and adding more complex models models to compare results. 
