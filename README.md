@@ -4,9 +4,9 @@ Using deep learning to classify speech into multiple different languages. This p
 **Overview of Project:**
 
 The general idea is to scrape wav files from a repository of user submitted voice clips. The data contains people of various accents, genders, and pitches for each language. 
-Then each voice clip (wav file) is to be preprocessed into melspectrograms with equal sample lengths (around a couple of seconds). Now, we can treat the melspectrograms as images and treat it as a 
-image classification / recognition problem by running them through a Convolutional Neural Network model. I have seen a lot of people use this technique to classify music and instruments with melspectrograms, so I 
-came up with the idea to try and see if we are able to classify language with this approach. 
+Then each voice clip (wav file) is to be preprocessed into melspectrograms with equal sample lengths (around a couple of seconds). Now, we can treat the melspectrograms as images and treat it as an image classification / recognition problem by running them through a Convolutional Neural Network model. I have seen a lot of people use this technique to classify music and instruments with melspectrograms, so I came up with the idea to try and see if we are able to classify language with this approach. 
+
+We decided to convert into melspectrogram because it converts the typical audio waves we know and transforms it into frequency by time over amplitude. Then it converts the frequency scale into the mel-scale, which a non-linear transformation that is based on pitch comparisons. 
 
 
 **Files:**
