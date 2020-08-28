@@ -2,6 +2,7 @@
 Using deep learning to classify speech into multiple different languages. This project is a work in progress.
 
 **Overview of Project:**
+
 The general idea is to scrape wav files from a repository of user submitted voice clips. The data contains people of various accents, genders, and pitches for each language. 
 Then each voice clip (wav file) is to be preprocessed into melspectrograms with equal sample lengths (around a couple of seconds). Now, we can treat the melspectrograms as images and treat it as a 
 image classification / recognition problem by running them through a Convolutional Neural Network model. I have seen a lot of people use this technique to classify music and instruments with melspectrograms, so I 
@@ -9,6 +10,7 @@ came up with the idea to try and see if we are able to classify language with th
 
 
 **Files:**
+
 1. `voxforge_dl.sh` - bash script used to scrape user submitted speech clips in multiple langauges. Change the parameters in the script if you wish to download different languages.
      default langauges are currently: English, French, Spanish, German
 2. `create_melspectrograms.py` - Python script to convert all the .wav files into melspectrograms and split them into train / test folders with each language as a class folder.
