@@ -6,7 +6,7 @@ import numpy as np
 from re import findall
 
 # Create a function to convert wav files to images of melspectrograms in a given folder
-def create_melspec(fold, train=9000, test=1000, n_fft = 2048, hop_length = 512, n_mels = 64, f_min = 20, f_max = 8000, sample_rate = 16000):
+def create_melspec(fold, train=8000, test=2000, n_fft = 2048, hop_length = 512, n_mels = 64, f_min = 20, f_max = 8000, sample_rate = 16000):
     '''
     Function to create mel-scaled spectrograms for all .wav files under a given language folder.
     Mel-scaled spectrograms (melspectrograms) are spectrograms with frequency converted to the mel-scale (a non-linear transformation)
@@ -33,27 +33,30 @@ def create_melspec(fold, train=9000, test=1000, n_fft = 2048, hop_length = 512, 
 
     Example:
     create_melspec(fold='en_wav', train=9000, test=1000)
-        > returns: <train/test>/<language>/ <image of melspectrogram>.png ... for every wav file in 'en_wav' with a train/test split of 0.9/0.1
+        > returns: <train/test>/<language>/ <image of melspectrogram>.png ... for every wav file in 'en_wav' with a train/test split
     '''
-
     print(f'Creating melspectrograms in {fold}')
 
     # get list of files under the given folder
     wav_files = os.listdir(path=fold)
 
     # creates subdirectories for the output of melspectrogram images (train/test split)
+    # NOTE: you will need to manually add more for additional languages you choose to include
     if 'en' in fold:
-        spectrogram_path_train = f'vox_lang/train/{fold.replace(fold, "English")}'
-        spectrogram_path_test = f'vox_lang/test/{fold.replace(fold, "English")}'
+        spectrogram_path_train = "data/train/English"
+        spectrogram_path_test = "data/test/English"
     elif 'fr' in fold:
-        spectrogram_path_train = f'vox_lang/train/{fold.replace(fold, "French")}'
-        pectrogram_path_test = f'vox_lang/test/{fold.replace(fold, "French")}'
+        spectrogram_path_train = "data/train/French"
+        spectrogram_path_test = "data/test/French"
     elif 'es' in fold:
-        spectrogram_path_train = f'vox_lang/train/{fold.replace(fold, "Spanish")}'
-        pectrogram_path_test = f'vox_lang/test/{fold.replace(fold, "Spanish")}'
+        spectrogram_path_train = "data/train/Spanish"
+        spectrogram_path_test = "data/test/Spanish"
     elif 'de' in fold:
-        spectrogram_path_train = f'vox_lang/train/{fold.replace(fold, "German")}'
-        pectrogram_path_test = f'vox_lang/test/{fold.replace(fold, "German")}'
+        spectrogram_path_train = "data/train/German"
+        spectrogram_path_test = "data/test/German"
+    elif 'it' in fold:
+        spectrogram_path_train = "data/train/Italian"
+        spectrogram_path_test = "data/test/Italian"
     ### you can keep adding to this line for all languages you choose to include ###
 
     # create the path for the spectrograms if it doesn't exist already
@@ -109,11 +112,19 @@ def create_melspec(fold, train=9000, test=1000, n_fft = 2048, hop_length = 512, 
 
         # cap the max number of data for each class to have a balanced distribution
         if counter >= (train+test):
+            print("Finished. Outputs are in the 'data' folder.")
             break
 
+# return a list of all the language_wav folders in the working directory
+all_folders = os.listdir(path="./")
+r = re.compile(".*_wav")
+lang_folders = list(filter(r.match, all_folders))
 
-# create our spectrograms
-lang_folders = ['en_wav','fr_wav','es_wav','de_wav']
+# check the list of folders
+print(f"The wav files are stored in the folders: {lang_folders}")
 
+
+# Generate spectrograms for each language folder
+# NOTE: Since the lowest number of data points is italian with 10500 files, we will distribute the train/test based on that using amount with a 75/25 split
 for i in lang_folders:
-    create_melspec(i, train=9000, test=1000)
+    create_melspec(fold=i, train=7875, test=2625)

@@ -4,16 +4,19 @@
 #### This script will download, extract, and move wav files from the voxforge site ####
 
 # List of languages to download. Based on the URL, add or delete manually if you wish to change languages to scrape
-LanguageArray=("en" "fr" "es" "de", "it")
+LanguageArray=("en" "fr" "es" "de" "it")
 
-# Sets working directory as root location to download files to
+# Sets working directory as where the script was run and where to download the files
+cd "$( dirname "${BASH_SOURCE[0]}" )"
+echo $(pwd)
 rootdir=$(pwd)
 
 #### STEP 1: Download files for each language and wait 5 seconds per download to not overload server #####
 for lang in ${LanguageArray[*]}; do
 
-	#### Use wget instead if you want to just download from top to bottom or everything (-Q limits the max size downloaded per class) ####
-	wget -r -np -Q1024m -nc -w3 R "index.html*" -P /$lang http://www.repository.voxforge1.org/downloads/$lang/Trunk/Audio/Main/16kHz_16bit/
+	#### Use wget instead if you want to just download from top to bottom for everything ####
+	# -Q limits the max size downloaded per class if you wish to not download the whole repo
+	wget -r -np -Q2500m -nc -w3 R "index.html*" -P $rootdir/$lang http://www.repository.voxforge1.org/downloads/$lang/Trunk/Audio/Main/16kHz_16bit/
 
 	#### Use the code below if you want to download a randomized list of files from the csv####
 	#[[ ! -d $lang ]] && mkdir $lang; cd $lang;
@@ -49,8 +52,12 @@ for lang in ${LanguageArray[*]}; do
 		fi
 
 		# rename and move all the wav files to one subfolder
-		cd $rootdir/$lang/$folder/wav;
-		for f in *.wav; do mv "$f" "${f}_${folder}.wav"; done
-		mv *.wav $rootdir/$newlang
+		if [ -d $rootdir/$lang/$folder/wav ] && [ ! -z "$(ls -A -- $rootdir/$lang/$folder/wav)" ]; then
+			cd $rootdir/$lang/$folder/wav;
+			for f in *.wav; do mv "$f" "${f}_${folder}.wav"; done
+			mv *.wav $rootdir/$newlang
+		else
+			pass
+		fi
 	done
 done
