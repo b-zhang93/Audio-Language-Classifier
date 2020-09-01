@@ -15,5 +15,5 @@ I decided to convert into melspectrograms because it converts audio waves by tra
 2. `create_melspectrograms.py` - Python script to convert all the .wav files into melspectrograms and split them into train / test folders with each language as a class folder.
 3. `mel_transform.ipynb` - Juypter notebook used for prototyping the create_melspectrogram.py file. Will probably remove after final version since it's redundant.
 4. `CNN.ipynb`(outdated) - prototyping first two simple CNN models with the melspectrograms. Will be updating later to use OOP and class / methods for the models and adding more complex models models to compare results. Code is very rough and messy.
-5. `CNN_with_oop.ipynb` - converted the models and functions in `CNN.ipynb` into cleaner versions using Object Oriented Programming. Converted the models into class objects which can be instantiated with hyperparameters. Cleaned up the functions and minimalized everything. Will be using this notebook going forward.
+5. `Prototyping_CNN_Models.ipynb` - converted the models and functions in `CNN.ipynb` into class objects using Object Oriented Programming. They can be instantiated with hyperparameters. Cleaned up the functions and minimalized everything to be more efficient. Prototyped several different models and tuning hyperparameters as well (may move this part to another notebook). 
 
