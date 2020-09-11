@@ -21,6 +21,8 @@ I decided to convert into melspectrograms because it converts audio waves by tra
 
 4. `helpers.py` - Helper utility functions such as evaluating, scoring, fitting, plot metrics, create confusion matrix for models. Plus GPU moving functions that were taken from FreeCodeCamp's pytorch tutorials.
 
+5. `train_model.py` - Python script to train the model using the melspectrograms that were created. Use this AFTER `create_melspectrograms.py`. Output will be a saved model state.
+
 5. `notebooks/Prototyping_CNN_Models.ipynb` - created neural network models from scratch as class objects using Object Oriented Programming and Pytorch. They can be instantiated with hyperparameters. Created helper functions to fit, evaluate, and score the model. Prototyped several different models and tuned hyperparameters. Read the notebook for the whole process. 
 
 6. `notebooks/Exploring Generalizability.ipynb` - scraped audio files from YouTube to test the model how it performs on real-world external data. Evaluating how generalizable the models are after only being trained using voice clips from one data repository. Then selecting the best performing model from both the prototyping and generalizability evaluations as our final exhaustive model to use for the web app. Read the notebook for the whole process.
