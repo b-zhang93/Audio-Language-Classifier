@@ -1,5 +1,5 @@
 # Audio-Language-Classifier
-Using deep learning to classify speech into multiple different languages. This project is a work in progress.
+Using deep learning to classify speech into multiple different languages. This project is currently in progress (WIP 80%)
 
 **Overview of Project:**
 
