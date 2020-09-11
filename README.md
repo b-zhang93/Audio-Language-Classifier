@@ -12,13 +12,21 @@ I decided to convert into melspectrograms because it converts audio waves by tra
 **Files:**
 
 1. `run_setup.sh` - bash script used to mass download files from voxforge of user submitted speech clips in multiple langauges. It then extracts and moves all .wav into separate subfolders for preprocessing automatically. Change the parameters in the script if you wish to download different languages. Default langauges are currently:  English, French, Spanish, German
+
 2. `create_melspectrograms.py` - Python script to convert all the .wav files into melspectrograms and split them into train / test folders with each language as a class folder.
+
 3. `model.py` - Final model architecture code using Pytorch. Convolutional Neural Network with batch norm and dropout. Found this to be the best performing model.
+
 4. `helpers.py` - Helper utility functions such as evaluating, scoring, fitting, plot metrics, create confusion matrix for models. Plus GPU moving functions that were taken from FreeCodeCamp's pytorch tutorials.
+
 5. `notebooks/Prototyping_CNN_Models.ipynb` - created neural network models from scratch as class objects using Object Oriented Programming and Pytorch. They can be instantiated with hyperparameters. Created helper functions to fit, evaluate, and score the model. Prototyped several different models and tuned hyperparameters. Read the notebook for the whole process. 
+
 6. `notebooks/Exploring Generalizability.ipynb` - scraped audio files from YouTube to test the model how it performs on real-world external data. Evaluating how generalizable the models are after only being trained using voice clips from one data repository. Then selecting the best performing model from both the prototyping and generalizability evaluations as our final exhaustive model to use for the web app. Read the notebook for the whole process.
+
 7. `app.py` - Application created using Streamlit to allow users to upload their own voice clips and have the app return them the detected language. We are using the best performing model from the previous tests. To account for the lowered performance on external data, the app now extracts as many 4 second samples as it can from the audio file and classifies each one. It then aggregates the total count and returns a break down in percentage per language. This way we are looking at the holistic sample rather than only a 4 second window per file. This helps improve accuracy as we are sampling more times from a single file and returning more averaged results.
+
 8. `assets` - folder holding assets (images, audio presets) for the app. 
+
 
 ## Currently Working On:
 - exploring weakness and strengths of the trained model (wip)
