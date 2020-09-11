@@ -1,1 +1,1 @@
-web: sh runapp.sh && streamlit runapp.py
+web: sh runapp.sh && streamlit run app.py
