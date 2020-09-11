@@ -5,7 +5,7 @@ DEMO the web app: https://language-ai.herokuapp.com/
 
 **Overview of Project:**
 
-The general idea is to scrape wav files from a repository of user submitted voice clips (repository.voxforge1.org). The data consists of speakers with various accents, genders, and pitches for each language. 
+The general idea of the project is to see if we can train a model to classify various languages. The process is to scrape wav files from a repository of user submitted voice clips (repository.voxforge1.org). The data consists of speakers with various accents, genders, and pitches for each language. 
 Each voice clip (wav file) is to be preprocessed into melspectrograms with equal sample lengths (around a couple of seconds). Now, we can treat the melspectrograms as images and treat this as an image classification / recognition problem by running them through a Convolutional Neural Network model. I have seen a lot of people use this technique to classify music and instruments with melspectrograms, so I came up with the idea to try and see if I can classify audio languages with this approach. 
 
 I decided to convert into melspectrograms because it converts audio waves by transforming them into frequency by time over amplitude. Then it converts the frequency scale into the mel-scale, which a non-linear transformation that is based on pitch comparisons. This makes the audio data much more easier to visualize and differentiate. 
