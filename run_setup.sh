@@ -61,3 +61,9 @@ for lang in ${LanguageArray[*]}; do
 		fi
 	done
 done
+
+
+#### STEP 3: DELETE FOLDERS WE DO NOT NEED ANYMORE ####
+# remove all the empty extracted folders we moved the wav files from and all the targz folders we downloaded
+cd $rootdir
+rm -r en fr de it es
