@@ -36,12 +36,12 @@ def load_audio(file, sr=16000):
     return clip, sample_rate
 
 # load the model
-model = load_model("trained_model_3_state.pt")
+model = load_model("assets/trained_model_3_state.pt")
 
 """
 # Language Detection AI
 
-AI bot trained to detect the language from speech using Deep Learning 
+AI bot trained to detect the language from speech using Deep Learning
 
 ##
 """
@@ -58,7 +58,7 @@ st.sidebar.markdown('## Upload Voice Clip')
 wav_file = st.sidebar.file_uploader("Upload Your WAV File Here:", type=["wav"])
 
 # allow users to choose a preloaded sample
-st.sidebar.markdown("""## Or Use a Sample:""")
+st.sidebar.markdown("""## Or Use a Preset Audio Clip:""")
 preset = st.sidebar.radio("Choose a Language", options=["None"]+classes)
 
 st.sidebar.header("") # add some empty space
