@@ -27,7 +27,7 @@ transformer = tf.Compose([tf.Resize([64,64]), tf.ToTensor()])
 @st.cache(allow_output_mutation=True)
 def load_model(path="trained_model_3_state.pt"):
     model = CNN_model_3(opt_fun=torch.optim.Adam, lr=0.001)
-    model.load_state_dict(torch.load(path))
+    model.load_state_dict(torch.load(path, map_location=torch.device('cpu')))
     return model
 
 @st.cache(allow_output_mutation=True, suppress_st_warning=True)
