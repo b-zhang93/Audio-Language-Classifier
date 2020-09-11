@@ -1,3 +1,4 @@
+## Files
 
 `notebooks/Prototyping_CNN_Models.ipynb` - created neural network models from scratch as class objects using Object Oriented Programming and Pytorch. They can be instantiated with hyperparameters. Cleaned up the functions and minimalized everything to be more efficient. Prototyped several different models and tuning hyperparameters as well.
 
