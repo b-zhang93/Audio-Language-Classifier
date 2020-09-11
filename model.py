@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+# NOTE: optimal paramters are lr=0.001 and optimzier=Adam
 class CNN_model_3(nn.Module):
     def __init__(self, opt_fun, lr, **opt_params):
         '''
