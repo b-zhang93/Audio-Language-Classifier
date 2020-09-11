@@ -3,6 +3,11 @@ Using deep learning to classify speech into multiple different languages. This p
 
 DEMO the web app: https://language-ai.herokuapp.com/
 
+#### To Do List:
+- Clean up github repository layout to be more organized and easy to navigate
+- Update readme.md from WIP to deployed state. 
+
+
 **Overview of Project:**
 
 The general idea of the project is to see if we can train a model to classify various languages. The process is to scrape wav files from a repository of user submitted voice clips (repository.voxforge1.org). The data consists of speakers with various accents, genders, and pitches for each language. 
@@ -32,9 +37,5 @@ I decided to convert into melspectrograms because it converts audio waves by tra
 9. `assets` - folder holding assets (images, audio presets) for the app. 
 
 
-## Currently Working On:
-- exploring weakness and strengths of the trained model (completed)
-- create a data product / app to classify audio speech into language (completed)
-- deploying the app to heroku or some sort of hosting platform for live use (completed)
 
 
