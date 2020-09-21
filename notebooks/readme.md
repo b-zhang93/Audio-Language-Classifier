@@ -6,7 +6,7 @@
 - Prototyped several different models
 - Tuned hyperparameters such as epochs, learning rate, gradient clipping, and weight decay. 
 
-`Exploring Generalizability.ipynb` 
+`Exploring_Generalizability.ipynb` 
 - Scraped audio files from YouTube to test the model how it performs on real-world external data.
 - Converted those audio files into 4 second samples and then into melspectrograms
 - Evaluated how generalizable the models are after only being trained using voice clips from one data repository. 
