@@ -1,6 +1,5 @@
 # Audio-Language-Classifier
-Using deep learning to classify speech into multiple different languages. This project is currently in progress (WIP 95%)
-
+Using deep learning to classify speech into multiple different languages. 
 DEMO the web app: https://language-ai.herokuapp.com/
 
 #### To Do List:
