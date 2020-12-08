@@ -5,7 +5,7 @@ DEMO the web app: https://language-ai.herokuapp.com/
   <img src="https://i.ibb.co/80F30KW/audio-ai.png">
 </p>
 
-<p align="center">Using deep learning to classify speech into multiple different languages. </p>
+<p align="center">Built with Pytorch, Streamlit, and deployed on Heroku. Classifies 5 languages (EN, FR, GER, ES, IT) </p>
 
 #### To Do List:
 - Use Soundfile or pydub to enable both uploading mp3 and wav files (rather than just wav files currently)
