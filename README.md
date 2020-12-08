@@ -1,13 +1,11 @@
 # Audio-Language-Classifier
 
-<p align="center"> DEMO the web app: https://language-ai.herokuapp.com/</p>
+DEMO the web app: https://language-ai.herokuapp.com/
 <p align="center">
   <img src="https://i.ibb.co/80F30KW/audio-ai.png">
 </p>
 
-
-
-Using deep learning to classify speech into multiple different languages. 
+<p align="center">Using deep learning to classify speech into multiple different languages. </p>
 
 #### To Do List:
 - Use Soundfile or pydub to enable both uploading mp3 and wav files (rather than just wav files currently)
