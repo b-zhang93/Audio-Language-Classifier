@@ -3,8 +3,7 @@ Using deep learning to classify speech into multiple different languages.
 DEMO the web app: https://language-ai.herokuapp.com/
 
 #### To Do List:
-- Clean up github repository layout to be more organized and easy to navigate
-- Update readme.md from WIP to deployed state. 
+- Use Soundfile or pydub to enable both uploading mp3 and wav files (rather than just wav files currently)
 
 
 **Overview of Project:**
