@@ -1,7 +1,11 @@
 # Audio-Language-Classifier
-![image](https://i.ibb.co/80F30KW/audio-ai.png)
 
-DEMO the web app: https://language-ai.herokuapp.com/
+<p align="center"> DEMO the web app: https://language-ai.herokuapp.com/</p>
+<p align="center">
+  <img src="https://i.ibb.co/80F30KW/audio-ai.png">
+</p>
+
+
 
 Using deep learning to classify speech into multiple different languages. 
 
